@@ -1,0 +1,41 @@
+.example-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 45%;
+    height: 100%;
+    visibility: hidden;
+}
+
+.example-sidenav-content {
+    visibility: visible;
+    color: black;
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    position: absolute;
+    top: 40%;
+    z-index: 99;
+}
+
+.mat-icon-button{
+    background-color: darkgray;
+}
+
+.example-sidenav {
+    visibility: visible;
+    width: 85%;
+    padding: 10px;
+    z-index: 100;
+}
+
+.header{
+    margin-top: 8%;
+    text-align: center;
+}
+
+.subHeader{
+    margin-top: 5%;
+}

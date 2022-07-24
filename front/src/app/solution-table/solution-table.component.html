@@ -1,0 +1,35 @@
+
+<table mat-table [dataSource]="sourceList" style="width: 100%;">
+  <ng-container matColumnDef="index">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let element" class="leftCols"> {{element.index}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Problem Stage-Number</th>
+    <td mat-cell *matCellDef="let element" class="leftCols"> {{element.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="steps">
+    <th mat-header-cell *matHeaderCellDef> Total Steps </th>
+    <td mat-cell *matCellDef="let element" class="leftCols"> {{element.steps}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="numInst">
+    <th mat-header-cell *matHeaderCellDef> Instruction Used </th>
+    <td mat-cell *matCellDef="let element" class="leftCols"> {{element.numInst}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="instructions">
+    <th mat-header-cell *matHeaderCellDef> Instruction Details </th>
+    <td mat-cell *matCellDef="let element">
+      <p *ngFor="let inst of element.instructions">
+        ·{{inst.id}}· {{inst.name}} {{inst.info}}
+      </p>
+    </td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="cols"></tr>
+  <tr mat-row *matRowDef="let row; columns: cols;"></tr>
+</table>

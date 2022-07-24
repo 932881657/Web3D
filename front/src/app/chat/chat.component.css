@@ -1,0 +1,70 @@
+.example-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 45%;
+    height: 100%;
+    visibility: hidden;
+}
+
+.example-sidenav-content {
+    visibility: visible;
+    color: black;
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    position: absolute;
+    top: 45%;
+    z-index: 99;
+}
+
+.mat-icon-button{
+    background-color: darkgray;
+}
+
+.example-sidenav {
+    visibility: visible;
+    width: 85%;
+    padding: 10px;
+    z-index: 100;
+}
+
+.members{
+    position: absolute;
+    height: 90%;
+    width: 30%;
+    left: 0;
+    top: 7%
+}
+
+.conversation-history{
+    position: absolute;
+    height: 80%;
+    width: 67%;
+    left: 31%;
+    top: 7%;
+}
+
+.conversation-input{
+    position: absolute;
+    height: 10%;
+    width: 67%;
+    right: 2%;
+    bottom: 2%;
+}
+
+.example-full-width{
+    width: 80%;
+    margin-right: 5%;
+    margin-top: 3%;
+    margin-left: 4%;
+}
+
+.portrait{
+    width: 60px;
+    height: 60px;
+    border-radius: 10%;
+    margin: 10px;
+}

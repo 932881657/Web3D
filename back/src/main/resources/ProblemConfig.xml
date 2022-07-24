@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problemRepo>
+    <problem>
+        <title>收发室</title>
+        <description>把代码拖到这个区域来组成你的程序。
+            你的程序必须告诉你，对于INBOX(输入栏）里的每个东西，你都得把它给取出来，再丢进OUTBOX(输出栏)里。</description>
+        <stage>1</stage>
+        <number>1</number>
+        <instructions>inbox;outbox</instructions>
+        <input>3;8;1</input>
+        <output>3;8;1</output>
+        <memory>0</memory>
+        <worldInfo>-2;7;-87;0</worldInfo>
+    </problem>
+    <problem>
+        <title>繁忙的收发室</title>
+        <description>你要做的就是把INBOX（输入栏）里的每一件东西，都放到OUTBOX（输出栏）里。
+你现在可以使用一个新命令JUMP（跳转）！
+通过拖动JUMP（跳转）的箭头可以让运算跳转到你代码里的任意一行。
+有了这个能力，你可以仅用三行代码就干完这份工作。</description>
+        <stage>1</stage>
+        <number>2</number>
+        <instructions>inbox;outbox;jump</instructions>
+        <input>I;N;I;T;I;A;L;I;Z;E</input>
+        <output>I;N;I;T;I;A;L;I;Z;E</output>
+        <memory>0</memory>
+        <worldInfo>3.7;6;-120.7;0</worldInfo>
+    </problem>
+    <problem>
+        <title>复印楼层</title>
+        <description>暂时先无视INBOX，直接吧下面三个字母发至OUTBOX：
+BUG
+设备管理部的员工在地毯上放了些东西。要是你有办法把它们捡起来就好了......</description>
+        <stage>1</stage>
+        <number>3</number>
+        <instructions>inbox;outbox;copyfrom;jump</instructions>
+        <input>-99;-99;-99;-99</input>
+        <output>B;U;G</output>
+        <memory>6;U;J;X;G;B;E</memory>
+        <worldInfo>-70;7;-181.3;0</worldInfo>
+    </problem>
+    <problem>
+        <title>扰码处理器</title>
+        <description>从INBOX（输出栏）中拿出2件物品，以相反的顺序丢进OUTBOX（输出栏）里，直到INBOX（输入栏）被拿空。
+你现在又能使用一个新命令了！
+你可以用COPYTO（拷贝至）把一个东西随意复制到地毯上的任何位置。
+不用担心，公司有专人负责打扫。</description>
+        <stage>1</stage>
+        <number>4</number>
+        <instructions>inbox;outbox;copyfrom;copyto;jump</instructions>
+        <input>2;9;K;R;2;5</input>
+        <output>9;2;R;K;5;2</output>
+        <memory>3;-;-;-</memory>
+        <worldInfo>31;7;-172;-1.047</worldInfo>
+    </problem>
+    <problem>
+        <title>零扑灭行动</title>
+        <description>把所有不是零的东西都扔进OUTBOX（输出栏）。
+你现在又能使用一个新命令了！
+只有你手里拿着零的时候才会发生跳转，否则就会继续执行下一行。</description>
+        <stage>1</stage>
+        <number>5</number>
+        <instructions>inbox;outbox;copyfrom;copyto;add;jump;jump_zero</instructions>
+        <input>4;0;-4;E;0;0;9;0</input>
+        <output>4;-4;E;9</output>
+        <memory>9;-;-;-;-;-;-;-;-;-</memory>
+        <worldInfo>101;7;-145.6;1.57</worldInfo>
+    </problem>
+    <problem>
+        <title>多雨之夏</title>
+        <description>把INBOX（输入栏）里的每两个数，加到一起，然后把结果丢进OUTBOX（输出栏）。
+你现在终于能使用新命令ADD（相加）了！
+不论你手里拿的是什么，ADD（相加）都能把地毯上被指定数值加到你手上。</description>
+        <stage>2</stage>
+        <number>1</number>
+        <instructions>inbox;outbox;copyfrom;copyto;add;jump</instructions>
+        <input>4;7;0;6;-5;5;3;-4</input>
+        <output>11;6;0;-1</output>
+        <memory>3;-;-;-</memory>
+        <worldInfo>12.8;3;-459;0</worldInfo>
+    </problem>
+    <problem>
+        <title>八倍扩大装置</title>
+        <description>把INBOX（输出栏）里的每个数都乘以8，然后丢到OUTBOX（输出栏）里。</description>
+        <stage>2</stage>
+        <number>2</number>
+        <instructions>inbox;outbox;copyfrom;copyto;add;jump</instructions>
+        <input>3;-5;5;0</input>
+        <output>24;-40;40;0</output>
+        <memory>5;-;-;-;-;-</memory>
+        <worldInfo>-80;3;-508;0</worldInfo>
+    </problem>
+    <problem>
+        <title>均衡之间</title>
+        <description>先从INBOX（输入栏）中取两个来，如果他们相等，把其中一个放进OUTBOX（输出栏）。要是不相等，就无视他们。然后重复上一步，直到清空INBOX（输入栏）！</description>
+        <stage>2</stage>
+        <number>3</number>
+        <instructions>inbox;outbox;copyfrom;copyto;add;sub;jump;jump_zero</instructions>
+        <input>4;5;6;6;1;4;-1;-1</input>
+        <output>6;-1</output>
+        <memory>3;-;-;-</memory>
+        <worldInfo>32.5;3;-565;0</worldInfo>
+    </problem>
+    <problem>
+        <title>专属休息室</title>
+        <description>对于INBOX（输入栏）中的每两个数：
+如果它们符号相同（都是正数或负数）。就把零送到OUTBOX（输出栏）里。
+如果它们符号不同，就把1送到OUTBOX（输出栏）里。
+重复，直到清空INBOX（输入栏）为止。</description>
+        <stage>2</stage>
+        <number>4</number>
+        <instructions>inbox;outbox;copyfrom;copyto;add;sub;jump;jump_zero;jump_neg</instructions>
+        <input>-4;4;6;-1;-4;-5;4;7</input>
+        <output>1;1;0;0</output>
+        <memory>6;-;-;-;-;0;1</memory>
+        <worldInfo>117.4;3;-460;-1.047</worldInfo>
+    </problem>
+    <problem>
+        <title>计时器</title>
+        <description>对于INBOX（输入栏）中的每一个数字，把它和到0之间的每一个数（包括它自己和0）都送进OUTBOX（输出栏）。
+这其实就是一个计时器！
+你现在又能够使用两个新的命令了！他们能把指定地毯上的数加或减1，然后把结果同时放回地毯和你手里。</description>
+        <stage>2</stage>
+        <number>5</number>
+        <instructions>inbox;outbox;copyfrom;copyto;add;sub;bump+;bump-;jump;jump_zero;jump_neg</instructions>
+        <input>6;-7;0;-7</input>
+        <output>6;5;4;3;2;1;0;-7;-6;-5;-4;-3;-2;-1;0;0;-7;-6;-5;-4;-3;-2;-1;0</output>
+        <memory>10;-;-;-;-;-;-;-;-;-;-</memory>
+        <worldInfo>145.2;3;-533;1.57</worldInfo>
+    </problem>
+    <problem>
+        <title>斐波那契参上</title>
+        <description>对于INBOX（输入栏）中的每个数，都把小于这个数的斐波那契数列送到OUTBOX（输出栏）里。如果INBOX（输入栏）里是10，那么就把1 1 2 3 5 8送进OUTBOX（输出栏）。
+你问斐波那契数列始啥？问问你头儿把，或者自己百度。
+1 1 2 3 5 8 13 21 34 55 89 ......</description>
+        <stage>3</stage>
+        <number>1</number>
+        <instructions>inbox;outbox;copyfrom;copyto;add;sub;bump+;bump-;jump;jump_zero;jump_neg</instructions>
+        <input>6;21</input>
+        <output></output>
+        <memory>10;-;-;-;-;-;-;-;-;-;0</memory>
+        <worldInfo>-0.3;0;-59.2;0</worldInfo>
+    </problem>
+    <problem>
+        <title>累加的倒计时</title>
+        <description>把INBOX（输入栏）中的每个数到0为止的自然数之和送进OUTBOX（输出栏）。
+比如，INBOX（输入栏）里的数是3，那么就把3+2+1+0=6送进OUTBOX（输出栏）。</description>
+        <stage>3</stage>
+        <number>2</number>
+        <instructions>inbox;outbox;copyfrom;copyto;add;sub;bump+;bump-;jump;jump_zero;jump_neg</instructions>
+        <input>3;5;0;6</input>
+        <output>6;15;0;21</output>
+        <memory>6;-;-;-;-;-;0</memory>
+        <worldInfo>175;3;302;3.8</worldInfo>
+    </problem>
+    <problem>
+        <title>小试除法</title>
+        <description>对于INBOX（输入栏）里的每两个数，第一个数里面可以装下多少个第二个数？
+目前你还不用担心负数，除数为0的情况，还有余数。
+小贴士：现在大概是练习一下从上一个工作里复制黏贴的时候了！</description>
+        <stage>3</stage>
+        <number>3</number>
+        <instructions>inbox;outbox;copyfrom;copyto;add;sub;bump+;bump-;jump;jump_zero;jump_neg</instructions>
+        <input>5;3;5;4;3;9;0;7</input>
+        <output>1;1;0;0</output>
+        <memory>10;-;-;-;-;-;-;-;-;-;0</memory>
+        <worldInfo>-142.6;3;238.5;1.57</worldInfo>
+    </problem>
+    <problem>
+        <title>数位炸弹</title>
+        <description>把INBOX（输入栏）里的每个数字的每位数上的数，分别发送给OUTBOX（输出栏）。
+例如123会变成1，2，3</description>
+        <stage>3</stage>
+        <number>4</number>
+        <instructions>inbox;outbox;copyfrom;copyto;add;sub;bump+;bump-;jump;jump_zero;jump_neg</instructions>
+        <input>470;238;1;6</input>
+        <output>4;7;0;2;3;8;1;6</output>
+        <memory>12;-;-;-;-;-;-;-;-;-;0;10;100</memory>
+        <worldInfo>0.04;0;369;3.1416</worldInfo>
+    </problem>
+</problemRepo>

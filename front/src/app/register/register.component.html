@@ -1,0 +1,46 @@
+<div class="wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+        <mat-card-header>
+            <mat-card-title>Register</mat-card-title>
+        </mat-card-header>
+        <form [formGroup]="form">
+            <mat-card-content>
+                <mat-form-field class="input-field">
+                    <input matInput placeholder="Username" formControlName="username">
+                    <mat-error *ngIf="username.invalid">{{getUsernameErrorMsg()}}</mat-error>
+                </mat-form-field>
+                <div formGroupName="passwordGroup">
+                    <mat-form-field class="input-field">
+                        <mat-label>Password</mat-label>
+                        <input matInput [type]="passwordHide ? 'password' : 'text'" formControlName="password">
+                        <button mat-icon-button matSuffix (click)="passwordHide = !passwordHide"
+                            [attr.aria-label]="'Hide password'" [attr.aria-pressed]="passwordHide">
+                            <mat-icon>{{passwordHide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <mat-error *ngIf="password.invalid">{{getPasswordErrorMsg()}}</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="input-field">
+                        <mat-label>Confirm Password</mat-label>
+                        <input matInput [type]="passwordHide ? 'password' : 'text'" formControlName="confirm"
+                            [errorStateMatcher]="errorStateMatcher">
+                        <button mat-icon-button matSuffix (click)="passwordHide = !passwordHide"
+                            [attr.aria-label]="'Hide password'" [attr.aria-pressed]="passwordHide">
+                            <mat-icon>{{passwordHide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <mat-error *ngIf="confirm.invalid || form.get('passwordGroup')?.hasError('childrenNotEqual')">
+                            {{getConfirmErrorMsg()}}</mat-error>
+                    </mat-form-field>
+
+                </div>
+                <mat-radio-group aria-label="Select an option" formControlName="modelName" >
+                    <mat-radio-button value="blueBot"><img src="../../assets/pics/blueBot.png" class="radio-img"></mat-radio-button>
+                    <mat-radio-button value="redBot"><img src="../../assets/pics/redBot.png" class="radio-img"></mat-radio-button>
+                </mat-radio-group>
+            </mat-card-content>
+
+            <button mat-stroked-button color="primary" class="btn-block" type="submit"
+                (click)="onSubmit()">Register</button>
+        </form>
+    </mat-card>
+</div>

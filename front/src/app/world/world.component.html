@@ -1,0 +1,41 @@
+<mat-spinner mode="indeterminate" *ngIf="!loaded"></mat-spinner>
+<app-problem *ngIf="isInProblem" class="problemWrapper" [stage]="stage" [number]="number"></app-problem>
+<app-craft [mapId]="mapId" [mapSolved]="mapSolved" [position]="position" [instructions]="instructions"></app-craft>
+<app-chat [mapId]="mapId"></app-chat>
+<app-manual></app-manual>
+<button mat-button (click)="goBack()" class="goBackButton" color="primary" *ngIf="isInProblem">Go Back</button>
+<div id="wrapper" [ngClass]="isInProblem ? 'opacity' : 'no-opacity'">
+    <three-renderer-world
+    (loadedEmitter)="setLoaded($event)"
+    [mapId]="mapId"
+    [problems]="problems"
+    (positionEmitter)="setPosition($event)"
+    (problemEmitter)="openProblem($event)"
+    [isInProblem]="isInProblem">
+        <three-scene *ngIf="mapId === 'camp'">
+            <three-light mode="hemi" [position]="[0, 50, 0]"></three-light>
+            <three-light mode="dir" [position]="[-1, 2, 1]"></three-light>
+            <three-light mode="ambient" [position]="[0, 0, 0]"></three-light>
+            <three-floor [position]="[0, -70, 0]" [color]="'0x00ebc0'"></three-floor>
+        </three-scene>
+        <three-scene *ngIf="mapId === 'island'">
+            <three-light mode="hemi" [position]="[0, 50, 0]"></three-light>
+            <three-light mode="dir" [position]="[-1, 2, 1]"></three-light>
+            <three-light mode="ambient" [position]="[0, 0, 0]"></three-light>
+            <three-floor [position]="[0, -70, 0]" [color]="'0x00ebc0'"></three-floor>
+        </three-scene>
+        <three-scene *ngIf="mapId === 'forest'">
+            <three-light mode="hemi" [position]="[0, 50, 0]"></three-light>
+            <three-light mode="dir" [position]="[-1, 2, 1]"></three-light>
+            <three-light mode="ambient" [position]="[0, 0, 0]"></three-light>
+            <three-light mode ="point" [position]="[2,-3,-68]" [color]="'0xffffff'"></three-light>
+            <three-light mode ="point" [position]="[-2.5,-11,49]" [color]="'0xffffff'"></three-light>
+            <three-light mode ="point" [position]="[-63,-12,306]" [color]="'0xffffff'"></three-light>
+            <three-light mode ="point" [position]="[23,-12,280]" [color]="'0xffff33'"></three-light>
+            <three-light mode ="point" [position]="[23,-12,280]" [color]="'0xffff33'"></three-light>
+            <three-light mode ="point" [position]="[-109,-12,164]" [color]="'0xffffff'"></three-light>
+            <three-light mode ="point" [position]="[170,-12,237]" [color]="'0xffffff'"></three-light>
+            <three-floor [position]="[0, -70, 0]" [color]="'0x00ebc0'"></three-floor>
+        </three-scene>
+    </three-renderer-world>
+</div>

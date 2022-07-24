@@ -1,0 +1,71 @@
+<div id="wrapper">
+  <div class="problem_left">
+    <mat-card class="problem_card">
+      <mat-card class="problem_detail">
+        <mat-card-title>{{title}}</mat-card-title>
+        <mat-card-subtitle>{{description}}</mat-card-subtitle>
+        <mat-card-footer style="margin:1% ;">完成情况：{{this.currentStatus}}</mat-card-footer>
+      </mat-card>
+      <div class="ins_list">
+        <button *ngFor="let x of availableInsList" mat-raised-button color="primary" (click)="addIns(x);" class="insBtn">{{this.insNameList[x]}}</button>
+      </div>
+    </mat-card>
+  </div>
+  <div class="problem_mid">
+    <three-renderer-problem>
+      <three-scene>
+        <three-light mode="hemi" [position]="[0, 50, 0]"></three-light>
+        <three-light mode="dir" [position]="[-1, 2, 1]"></three-light>
+        <three-ground [position]="[0, 0, 0]"></three-ground>
+      </three-scene>
+    </three-renderer-problem>
+  </div>
+  <div class="problem_right">
+    <div class="inbox">
+      <p class="box_title"> input </p>
+      <div class="box_item_list">
+        <div class="box_item" *ngFor="let item of inputList">
+          {{item}}
+        </div>
+      </div>
+    </div>
+    <div class="storage">
+      <div class="hand" *ngIf="showHand">
+        <p class="storage_part_value">&nbsp;{{hand}}&nbsp;</p>
+        <p class="storage_part_index">hand</p>
+      </div>
+      <div class="step" *ngIf="showHand">
+        <p class="storage_part_value">&nbsp;{{step}}&nbsp;</p>
+        <p class="storage_part_index">step</p>
+      </div>
+      <!-- <div class="line" *ngIf="showHand">
+        <p class="storage_part_value">&nbsp;{{line}}&nbsp;</p>
+        <p class="storage_part_index">line</p>
+      </div> -->
+      <div class="storage_part" *ngFor="let item of storageList let i = index">
+        <p class="storage_part_value">&nbsp;{{item}}&nbsp;</p>
+        <p class="storage_part_index">{{i}}</p>
+      </div>
+
+    </div>
+    <div class="outbox">
+      <div class="outbox_part">
+        <p class="box_title"> output </p>
+        <div class="box_item_list">
+          <div class="box_item" *ngFor="let item of outputList">
+            {{item}}
+          </div>
+        </div>
+      </div>
+      <div class="outbox_part">
+        <p class="box_title"> expected output </p>
+        <div class="box_item_list">
+          <div class="box_item" *ngFor="let item of expectedOutputList">
+            {{item}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

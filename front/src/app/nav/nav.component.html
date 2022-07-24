@@ -1,0 +1,42 @@
+<div class="wrapper">
+  <mat-toolbar color="primary">
+  <button mat-icon-button [mat-menu-trigger-for]="menu" >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="login" routerLinkActive="active" *ngIf="!isLoggedIn">
+      <mat-icon>login</mat-icon>
+      <span>Login</span>
+    </button>
+
+    <button mat-menu-item *ngIf="isLoggedIn && username!=='admin'" [matMenuTriggerFor]="maps">
+      <mat-icon>map</mat-icon>
+      <span>maps</span>
+    </button>
+    <button mat-menu-item *ngIf="isLoggedIn  && username!=='admin'" routerLink="center" routerLinkActive="active" >
+      <mat-icon>account_circle</mat-icon>
+      <span>Center</span>
+    </button>
+    <button mat-menu-item *ngIf="isLoggedIn" (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      <span>Logout</span>
+    </button>
+  </mat-menu>
+  <mat-menu #maps="matMenu" id="mapMenu">
+    <button mat-menu-item [routerLink]="['/world/camp']" routerLinkActive="active">
+      <span style="padding-right: 20px">Camp</span>
+      <mat-icon *ngIf="mapId === 'camp'">check</mat-icon>
+    </button>
+    <button mat-menu-item [routerLink]="['/world/island']" routerLinkActive="active">
+      <span style="padding-right: 20px">Island</span>
+      <mat-icon *ngIf="mapId === 'island'">check</mat-icon>
+    </button>
+    <button mat-menu-item [routerLink]="['/world/forest']" routerLinkActive="active">
+      <span style="padding-right: 20px">Forest</span>
+      <mat-icon *ngIf="mapId === 'forest'">check</mat-icon>
+    </button>
+  </mat-menu>
+  <span class="spacer">Machine Witness</span>
+  <span *ngIf="isLoggedIn">{{username}}</span>
+</mat-toolbar>
+</div>

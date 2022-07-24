@@ -1,0 +1,69 @@
+<div class="center-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+        <mat-card-header>
+            <mat-card-title>User Center</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+            <mat-tab-group>
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        <mat-icon class="tab-icon">account_circle</mat-icon>
+                        Information
+                    </ng-template>
+                    <div class="small-content">
+                        <div style="font-size: 20px; margin-bottom: 30px">username: {{username}}</div>
+                        <div style="font-size: 20px;">model name: {{modelName}}</div>
+                    </div>
+
+                </mat-tab>
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        <mat-icon class="tab-icon">security</mat-icon>
+                        Change Password
+                    </ng-template>
+                    <div class="small-content">
+                        <form [formGroup]="form">
+                            <mat-form-field class="input-field">
+                                <mat-label>Old Password</mat-label>
+                                <input matInput [type]="passwordHide ? 'password' : 'text'"
+                                    formControlName="oldPassword">
+                                <button mat-icon-button matSuffix (click)="passwordHide = !passwordHide"
+                                    [attr.aria-label]="'Hide password'" [attr.aria-pressed]="passwordHide">
+                                    <mat-icon>{{passwordHide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                </button>
+                                <mat-error *ngIf="oldPassword.invalid">{{getOldPasswordErrorMsg()}}</mat-error>
+                            </mat-form-field>
+                            <mat-form-field class="input-field">
+                                <mat-label>New Password</mat-label>
+                                <input matInput [type]="passwordHide ? 'password' : 'text'"
+                                    formControlName="newPassword">
+                                <button mat-icon-button matSuffix (click)="passwordHide = !passwordHide"
+                                    [attr.aria-label]="'Hide password'" [attr.aria-pressed]="passwordHide">
+                                    <mat-icon>{{passwordHide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                </button>
+                                <mat-error *ngIf="newPassword.invalid">{{getNewPasswordErrorMsg()}}</mat-error>
+                            </mat-form-field>
+                            <button mat-stroked-button color="primary" class="btn-block" type="submit"
+                                (click)="onSubmit()">Submit</button>
+                        </form>
+                    </div>
+
+                </mat-tab>
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        <mat-icon class="tab-icon">vpn_key</mat-icon>
+                        Problem Solutions
+                    </ng-template>
+                    <div style="width:100%;height: 500px;">
+                        <p *ngIf="solutions.length === 0">You have not solved any problems yet</p>
+                        <div *ngIf="solutions.length !== 0" style="width:100%;">
+                            <app-solution-table [sourceList]="sourceList"></app-solution-table>
+                        </div>
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+        </mat-card-content>
+
+    </mat-card>
+</div>

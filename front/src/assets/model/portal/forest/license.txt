@@ -1,0 +1,11 @@
+Model Information:
+* title:	Runic Portal Simple
+* source:	https://sketchfab.com/3d-models/runic-portal-simple-3be104094950433cbfd1bbc1fed0f187
+* author:	Brennan (https://sketchfab.com/Brennanrw)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Runic Portal Simple" (https://sketchfab.com/3d-models/runic-portal-simple-3be104094950433cbfd1bbc1fed0f187) by Brennan (https://sketchfab.com/Brennanrw) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)

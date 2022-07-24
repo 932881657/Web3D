@@ -1,0 +1,131 @@
+#wrapper {
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.problem_left,
+.problem_right {
+  height: 100%;
+  width: 28%;
+  display: inline-block;
+  vertical-align: top;
+  padding: 1%;
+  padding-top: 5%;
+}
+
+.problem_mid {
+  height: 100%;
+  width: 40%;
+  display: inline-block;
+  vertical-align: top;
+  margin-top:80px
+}
+
+.problem_card {
+  height: 80%;
+  background-color: darkgrey;
+}
+
+.problem_detail {
+  height: 40%;
+}
+
+.inbox,
+.storage,
+.outbox {
+  background-color: darkgrey;
+  border-radius: 10px;
+  margin-bottom: 3%;
+}
+
+.inbox {
+  height: 10%;
+}
+
+.storage {
+  height: 50%;
+}
+
+.outbox {
+  height: 20%;
+}
+
+.outbox_part {
+  height: 45%;
+}
+
+.box_title {
+  padding-left: 2%;
+  padding-top: 1%;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: large;
+}
+
+.box_item_list {
+  white-space: nowrap;
+  /* overflow-x: scroll; */
+  padding-right: 2%;
+}
+
+.box_item {
+  height: 45px;
+  width: 45px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 4px;
+  margin-left: 10px;
+  text-align: center;
+  line-height: 45px;
+  display: inline-block;
+}
+
+.storage_part,.hand ,.step,.line{
+  display: inline-block;
+  background-color: rgb(255, 255, 255);
+  height: 17%;
+  width: 17%;
+  border-radius: 4px;
+  margin-left: 2.5%;
+  margin-top: 2.5%;
+  text-align: center;
+}
+.line{
+  float:left;
+  margin-left: -25%;
+  margin-top: 23%;
+}
+.step{
+  float:left;
+  margin-left: -45%;
+}
+.hand{
+  float:left;
+  margin-left: -25%;
+}
+.line,.step,.hand{
+  display: block;
+}
+
+.storage_part_value {
+  margin-top: 35%;
+  font-size: 300%;
+}
+
+.storage_part_index {
+  float: right;
+  margin-top: 5%;
+  margin-right: 5%;
+}
+
+.ins_list {
+  margin-top: 5%;
+}
+
+.insBtn{
+  margin-top:2%;
+  margin-right: 4%;
+  font-size:larger;
+}

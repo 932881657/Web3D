@@ -1,0 +1,42 @@
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <div class="members">
+      <h1 style="text-align: center;">Room of {{mapId}}</h1>
+      <mat-list>
+        <mat-list-item *ngFor="let player of others" style="margin-bottom: 20px">
+          <img src="../../assets/pics/bluePortrait.png" *ngIf="player.modelName === 'blueBot'" class="portrait">
+          <img src="../../assets/pics/redPortrait.png" *ngIf="player.modelName === 'redBot'" class="portrait">
+          <h1 style="margin-left: 10px; margin-top:5px;font-size:20px">{{player.username}}</h1>
+        </mat-list-item>
+      </mat-list>
+    </div>
+    <div class="conversation-history">
+      <mat-list>
+        <mat-list-item *ngFor="let message of messages" style="margin-bottom: 20px"
+          [dir]="message.isMe ? 'rtl' : 'ltr'">
+          <img matListAvatar src="../../assets/pics/bluePortrait.png" *ngIf="message.modelName === 'blueBot'"
+            class="portrait">
+          <img matListAvatar src="../../assets/pics/redPortrait.png" *ngIf="message.modelName === 'redBot'"
+            class="portrait">
+          <h2 matLine>{{message.username}}</h2>
+          <p matLine>{{message.content}}</p>
+        </mat-list-item>
+      </mat-list>
+    </div>
+    <div class="conversation-input">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Chat here</mat-label>
+        <input matInput placeholder="Message" [(ngModel)]="text">
+      </mat-form-field>
+      <button mat-icon-button (click)="speak()" style="width: 5;">
+        <mat-icon>send</mat-icon>
+      </button>
+    </div>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <button mat-icon-button (click)="drawer.toggle()">
+      <mat-icon>chat</mat-icon>
+    </button>
+  </div>
+</mat-drawer-container>

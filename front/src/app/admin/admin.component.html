@@ -1,0 +1,29 @@
+<div style="height: 100%;width: 100%;background-color: dimgray;text-align: center;">
+    <div style="text-align: center;padding-top: 5%;">
+        <mat-tab-group>
+            <mat-tab *ngFor="let stage of stageList; let i = index" [attr.data-index]="i">
+                <ng-template mat-tab-label style="font-size:25px">Stage{{i+1}}</ng-template>
+                <div class="radio">
+                    <mat-radio-group aria-labelledby="example-radio-group-label"
+                    class="example-radio-group"
+                    [(ngModel)]="selected[i]"
+                    color="primary">
+                    <mat-radio-button class="example-radio-button" *ngFor="let problem of stage"
+                     [value]="problem.index">
+                        {{problem.index}}
+                    </mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                
+                <div class="chart">
+                    <canvas baseChart
+                    [datasets]="statMap[selected[i]]"
+                    [labels]="labels"
+                    [options]="options"
+                    [legend]="true"
+                    [type]="'bar'"></canvas>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>
